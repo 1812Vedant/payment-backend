@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "crossenv": "^0.0.2-security",
     "dotenv": "^16.3.1",
     "email-validator": "^2.0.4",
