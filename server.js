@@ -5,7 +5,7 @@ const userRouter = require("./routes/userRoutes");
 const errorController = require("./controller/errorController");
 const app = express();
 //to read json
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 
 app.listen(4000, () => {
