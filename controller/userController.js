@@ -11,6 +11,20 @@ const createUser = asyncHandler(async (req, res, next) => {
   });
 });
 
+const loginUser = asyncHandler(async (req, res, next) => {
+  const { email, password } = req.body;
+  const user = await User.find({ email });
+
+  if (user) {
+    return req.status(202).json({
+      data: user,
+      status: "success",
+    });
+  } else {
+    next(new Error("User does not exist please signup first"));
+  }
+});
+
 const getAllUsers = asyncHandler(async (req, res, next) => {
   const users = await User.find({});
 
