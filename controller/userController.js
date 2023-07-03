@@ -34,4 +34,4 @@ const getAllUsers = asyncHandler(async (req, res, next) => {
   });
 });
 
-module.exports = { createUser, getAllUsers };
+module.exports = { createUser, getAllUsers, loginUser };
