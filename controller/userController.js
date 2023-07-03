@@ -15,14 +15,10 @@ const loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
   const user = await User.find({ email });
 
-  if (user) {
-    return req.status(202).json({
-      data: user,
-      status: "success",
-    });
-  } else {
-    next(new Error("User does not exist please signup first"));
-  }
+  return req.status(202).json({
+    data: user,
+    status: "success",
+  });
 });
 
 const getAllUsers = asyncHandler(async (req, res, next) => {
